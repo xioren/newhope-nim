@@ -89,7 +89,7 @@ proc polyUniform*(a: var Poly, seed: openArray[byte]) =
   discard keccakSqueeze(ctx.state, buf, nBlockRef, ctx.padding)
 
   while ctr < PARAM_N: # populate polynomial until all coeffs are set
-    val = (buf[pos] or (buf[pos+1] shl 8)) and 0x3fff'u16 # extract 14-bit value (pecialized for q = 12889)
+    val = (buf[pos] or (buf[pos+1] shl 8)) and 0x3fff'u16 # extract 14-bit value (specialized for q = 12889)
     
     if val < PARAM_Q: # accept value if in valid range
       a.coeffs[ctr] = val
