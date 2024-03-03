@@ -20,7 +20,7 @@ const SharedSecretSize = 32
 
 ############################################################################################
 
-proc hex*(digest: array[SharedSecretSize, byte]): string =
+proc hex*(digest: openArray[byte]): string =
   ## produces a hex string of length digest * 2
   result = newStringOfCap(digest.len + digest.len)
   for b in digest:
