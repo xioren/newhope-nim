@@ -1,6 +1,4 @@
-import ntt, params, poly, precomp, reduce
-import private/chacha20
-import private/sha3/shake128
+import params, poly, reduce
 
 export poly
 
